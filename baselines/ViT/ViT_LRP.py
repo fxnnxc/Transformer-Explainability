@@ -321,7 +321,7 @@ class VisionTransformer(nn.Module):
         x = self.head(x)
         return x
 
-    def relprop(self, cam=None,method="transformer_attribution", is_ablation=False, start_layer=0, **kwargs):
+    def relprop(self, cam=None, method="transformer_attribution", is_ablation=False, start_layer=0, **kwargs):
         # print(kwargs)
         # print("conservation 1", cam.sum())
         cam = self.head.relprop(cam, **kwargs)
