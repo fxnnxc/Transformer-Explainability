@@ -68,6 +68,5 @@ for idx in pbar:
     transformer_attribution = attribution_generator.generate_LRP(original_image, method=method, index=class_index)
     transformer_attribution = post_process_attribution(transformer_attribution)
     attrs[idx] = transformer_attribution.astype(np.float16)
-    break
     
-np.save(os.path.join(save_dir, method+".npy"), attrs)
+np.save(os.path.join(save_dir, method+".npy"), attrs)   
